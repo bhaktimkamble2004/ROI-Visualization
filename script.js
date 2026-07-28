@@ -225,13 +225,16 @@ document.getElementById('ctxExtent').textContent = SITE.areaExtent;
 document.getElementById('ctxObjective').textContent = SITE.objective;
 document.getElementById('ctxNote').textContent = SITE.note;
 
-const aboutList = document.getElementById('aboutList');
-aboutList.innerHTML = '';
-ABOUT_STUDY_AREA.forEach(item => {
-  const li = document.createElement('li');
-  li.innerHTML = `<svg viewBox="0 0 24 24">${item.icon}</svg><div><strong>${item.label}</strong><span>${item.text}</span></div>`;
-  aboutList.appendChild(li);
-});
+const aboutList = document.querySelector('.about-sidebar .about-list');
+if (aboutList) {
+  aboutList.innerHTML = '';
+  ABOUT_STUDY_AREA.forEach(item => {
+    const li = document.createElement('li');
+    li.className = 'about-item';
+    li.innerHTML = `<div><strong>${item.label}</strong><p>${item.text}</p></div>`;
+    aboutList.appendChild(li);
+  });
+}
 
 /* =========================================================
    Init
