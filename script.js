@@ -206,7 +206,7 @@ document.getElementById('navOpenMap').addEventListener('click', () => {
 /* =========================================================
    Site config injection
    ========================================================= */
-document.getElementById('heroLocation').innerHTML = SITE.locationShort;
+document.getElementById('heroLocation') && (document.getElementById('heroLocation').innerHTML = SITE.locationShort);
 document.getElementById('footerCredit').textContent = `© 2026 ${SITE.author} · ${SITE.programme} · ${SITE.instituteShort}`;
 
 document.getElementById('cardAuthor').textContent = SITE.author;
