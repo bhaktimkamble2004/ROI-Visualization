@@ -637,7 +637,8 @@ dt{ font-weight:500; }
   padding: 0.85rem 1.9rem;
 }
 
-.btn-open-app{ position:relative; overflow:hidden; }
+.btn-open-app{ position:relative; overflow:hidden; background: var(--accent); border-color: var(--accent); color:#fff; }
+.btn-open-app:hover{ filter: brightness(1.08); box-shadow: 0 10px 26px var(--accent-soft); }
 .btn-open-app.is-clicked::after{
   content:'';
   position:absolute; inset:0;
