@@ -153,10 +153,11 @@ function renderSlide(){
 
   applyAccent(d.accent);
 
-  document.getElementById('mapEmbed').src = d.appUrl;
-  document.getElementById('codeLink').href = d.codeUrl;
+ document.getElementById('codeLink').href = d.codeUrl;
   document.getElementById('openAppLink').href = d.appUrl;
 
+  document.getElementById('mapPreviewTitle').textContent = d.name;
+  document.getElementById('mapPreviewDesc').textContent = `This ${d.tab} app runs live in your browser but can't be embedded here due to Google Earth Engine's authentication requirements — open it directly for the full interactive experience.`;
   document.getElementById('infoDatasetName').textContent = d.name;
   document.getElementById('infoDatasetDesc').textContent = d.desc;
 
