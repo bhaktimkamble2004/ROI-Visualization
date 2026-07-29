@@ -227,7 +227,8 @@ function renderSlide(){
 
 function goTo(index){
   current = (index + DATASETS.length) % DATASETS.length;
-  renderSlide();
+  initMap();
+renderSlide();
 }
 
 document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
