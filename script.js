@@ -51,6 +51,7 @@ const DATASETS = [
     accent: "#7c6fe0",
     appUrl: "https://kamble-ee.projects.earthengine.app/view/landsat-9",
     codeUrl: "https://code.earthengine.google.com/dfccc543989df33b49de271d19835338",
+    tileUrl: "https://earthengine.googleapis.com/v1/projects/kamble-ee/maps/f03ab0e51df174997093a47eceb4b849-e002566394420a74c634947feec95bac/tiles/{z}/{x}/{y}",
     fields: [
       ["Earth Engine Collection", "LANDSAT/LC09/C02/T1_L2"],
       ["Resolution", "30 m"],
@@ -72,6 +73,7 @@ const DATASETS = [
     accent: "#e5484d",
     appUrl: "https://kamble-ee.projects.earthengine.app/view/sentinel-2",
     codeUrl: "https://code.earthengine.google.com/17f382e5479c6d8567fae832a1fa8f72",
+    tileUrl: "https://earthengine.googleapis.com/v1/projects/kamble-ee/maps/a33f3b7c6789c1b455855e524b154378-b027811247c8fc07f338676d48ce5993/tiles/%7Bz%7D/%7Bx%7D/%7By%7D",
     fields: [
       ["Earth Engine Collection", "COPERNICUS/S2_SR_HARMONIZED"],
       ["Resolution", "10 m"],
@@ -93,6 +95,7 @@ const DATASETS = [
     accent: "#2f9e44",
     appUrl: "https://kamble-ee.projects.earthengine.app/view/modis-ndvi",
     codeUrl: "https://code.earthengine.google.com/c09adc2eccccabcbf82c103a062e27df",
+    tileUrl: "https://earthengine.googleapis.com/v1/projects/kamble-ee/maps/cc0ee2759faa8a9f489eab2a34149c04-3dd6486393f898740c7f2d0777b4a46f/tiles/%7Bz%7D/%7Bx%7D/%7By%7D",
     fields: [
       ["Earth Engine Collection", "MODIS/061/MOD13Q1"],
       ["Resolution", "250 m"],
@@ -117,7 +120,36 @@ const DATASETS = [
 /* =========================================================
    Render
    ========================================================= */
+/* =========================================================
+   Render
+   ========================================================= */
 let current = 0;
+let leafletMap = null;
+let currentTileLayer = null;
+
+function initMap(){
+  leafletMap = L.map('liveMap', {
+    center: [17.6, 73.3], // roughly your Ratnagiri ROI center
+    zoom: 10,
+    zoomControl: true,
+    attributionControl: true
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap',
+    opacity: 0.3
+  }).addTo(leafletMap);
+}
+
+function updateTileLayer(url){
+  if (currentTileLayer) {
+    leafletMap.removeLayer(currentTileLayer);
+  }
+  currentTileLayer = L.tileLayer(url, {
+    attribution: 'Google Earth Engine',
+    maxZoom: 20
+  }).addTo(leafletMap);
+}
 
 function hexToRgba(hex, alpha){
   const h = hex.replace('#','');
