@@ -7,8 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -71,9 +72,8 @@
   </div>
 
   <div class="hero-inner">
-   
+
     <h1 class="hero-title">Interactive Geospatial Visualization of ROI Using Landsat 9, Sentinel-2 and MODIS NDVI</h1>
-    
 
     <div class="hero-card">
       <div class="hero-card-item">
@@ -185,70 +185,60 @@
         alt="Map of Dapoli, Khed and Chiplun talukas in Ratnagiri district">
       </div>
 
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<link rel="stylesheet" href="style.css">
       <aside class="about-sidebar">
 
-    <div class="about-head">
-        <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="9"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.6"/>
-            <path d="M12 8v.01M11 11h1v6h1"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"/>
-        </svg>
+        <div class="about-head">
+            <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"/>
+                <path d="M12 8v.01M11 11h1v6h1"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"/>
+            </svg>
 
-        <span>About the Study Area</span>
-    </div>
+            <span>About the Study Area</span>
+        </div>
 
+        <ul class="about-list">
 
-    <ul class="about-list">
+            <li class="about-item">
+                <i class="fa-solid fa-mountain"></i>
+                <div>
+                    <strong>Topography</strong>
+                    <p>Coastal plains, hills and undulating terrain.</p>
+                </div>
+            </li>
 
-        <li class="about-item">
-            <i class="fa-solid fa-mountain"></i>
-            <div>
-                <strong>Topography</strong>
-                <p>Coastal plains, hills and undulating terrain.</p>
-            </div>
-        </li>
+            <li class="about-item">
+                <i class="fa-solid fa-tree"></i>
+                <div>
+                    <strong>Land Cover</strong>
+                    <p>Forests, agriculture, settlements, water bodies and barren land.</p>
+                </div>
+            </li>
 
+            <li class="about-item">
+                <i class="fa-solid fa-cloud-rain"></i>
+                <div>
+                    <strong>Climate</strong>
+                    <p>Tropical monsoon climate with heavy seasonal rainfall.</p>
+                </div>
+            </li>
 
-        <li class="about-item">
-            <i class="fa-solid fa-tree"></i>
-            <div>
-                <strong>Land Cover</strong>
-                <p>Forests, agriculture, settlements, water bodies and barren land.</p>
-            </div>
-        </li>
+            <li class="about-item">
+                <i class="fa-solid fa-seedling"></i>
+                <div>
+                    <strong>Relevance</strong>
+                    <p>Supports environmental monitoring and land-use planning.</p>
+                </div>
+            </li>
 
+        </ul>
 
-        <li class="about-item">
-            <i class="fa-solid fa-cloud-rain"></i>
-            <div>
-                <strong>Climate</strong>
-                <p>Tropical monsoon climate with heavy seasonal rainfall.</p>
-            </div>
-        </li>
-
-
-        <li class="about-item">
-            <i class="fa-solid fa-seedling"></i>
-            <div>
-                <strong>Relevance</strong>
-                <p>Supports environmental monitoring and land-use planning.</p>
-            </div>
-        </li>
-
-    </ul>
-
-</aside>
+      </aside>
     </div>
 
     <div class="context-note">
@@ -273,18 +263,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
   <div class="dataset-panel" id="datasetPanel">
     <div class="map-col">
-  <div class="map-frame-head">
-    <span class="map-frame-label"><span class="dot" id="mapDot"></span>Interactive Map</span>
-    <a href="#" class="code-link" id="codeLink" target="_blank" rel="noopener">&lt;/&gt; GEE CODE</a>
-  </div>
-  <div class="map-live-wrap">
-    <div id="liveMap" class="map-live"></div>
-  </div>
-  <a href="#" class="btn btn-outline btn-open-app" id="openAppLink" target="_blank" rel="noopener">
-    Open Full Google Earth Engine App &#8599;
-  </a>
-</div>
-</div>
+      <div class="map-frame-head">
+        <span class="map-frame-label"><span class="dot" id="mapDot"></span>Interactive Map</span>
+        <a href="#" class="code-link" id="codeLink" target="_blank" rel="noopener">&lt;/&gt; GEE CODE</a>
+      </div>
+      <div class="map-live-wrap">
+        <div id="liveMap" class="map-live"></div>
+      </div>
+      <a href="#" class="btn btn-outline btn-open-app" id="openAppLink" target="_blank" rel="noopener">
+        Open Full Google Earth Engine App &#8599;
+      </a>
+    </div>
 
     <div class="info-col">
       <div class="info-block">
